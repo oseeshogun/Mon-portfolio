@@ -1,0 +1,115 @@
+.container {
+  margin: 20vh 0%;
+}
+
+.titleContainer {
+  margin: 0 10%;
+}
+
+.title {
+  color: #8f94fb;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.underline {
+  width: 30%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #8f94fb;
+}
+
+.projectItem {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  padding: 0 10%;
+  margin-top: 10%;
+}
+
+.projectDescription {
+  background: transparent;
+  padding: 10px;
+  width: 40%;
+  border-radius: 20px;
+  box-shadow: -12px 12px 30px rgba(143, 148, 251, 0.4);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  position: absolute;
+  top: 30%;
+}
+
+.projectDescription h1 {
+  color: #8f94fb;
+}
+
+.projectDescriptionText {
+  color: #83c9fd;
+  font-weight: 500;
+}
+
+.projectDescriptionTechno {
+  color: #46487a;
+  font-weight: bold;
+}
+
+.projectDescriptionTechno a {
+  color: #6668a3;
+}
+
+.projectImageContainer {
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+.projectImage {
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: -10;
+}
+
+.projectsList {
+  width: 100;
+  display: flex;
+  overflow-x: scroll;
+  padding: 0 10%;
+}
+
+.projectsList::-webkit-scrollbar {
+  display: none;
+}
+
+.projectsList li {
+  min-width: 80vw;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 20vh 2%;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .underline {
+    width: 50%;
+  }
+
+  .projectsList {
+    margin: 0;
+    padding: 0;
+  }
+
+  .projectDescription {
+    width: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .projectImageContainer {
+    width: 100%;
+  }
+}

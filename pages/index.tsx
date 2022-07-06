@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Header from "./components/Header";
+import Projects from "./components/Projects";
 
 const Home: NextPage = () => {
   return (
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
           layout="responsive"
         />
       </div>
+      <Projects />
     </div>
   );
 };
