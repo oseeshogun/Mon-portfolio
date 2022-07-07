@@ -1,15 +1,7 @@
-import {
-  DetailedHTMLProps,
-  Dispatch,
-  HTMLAttributes,
-  LegacyRef,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import styles from "../../../styles/Projects.module.css";
 import ProjectItem from "./ProjectItem";
+import { IoChevronForwardOutline, IoChevronBackSharp } from "react-icons/io5";
 
 function Projects({
   endTouched,
@@ -99,13 +91,13 @@ function Projects({
       if (listIsIntercepting && !endTouched) {
         // document.body.style.overflow = "hidden";
         // window.scrollTo(y)
-        window.scrollTo(0, fixY);
+        // window.scrollTo(0, fixY);
       }
 
       if (y > window.scrollY) {
         // console.log("scrolling up");
         // console.log("scrolling", event.pageYOffset);
-        if (endTouched) {
+        if (listIsIntercepting) {
           projectsListRef.current?.scrollBy(-10, 0);
         }
       } else {
@@ -123,7 +115,41 @@ function Projects({
       window.removeEventListener("scroll", handleNavigation);
       listProjects?.removeEventListener("scroll", onScroll);
     };
-  }, [y, listIsIntercepting, keepScroll, endTouched, fixY, fixYsetted, setEndTouched]);
+  }, [
+    y,
+    listIsIntercepting,
+    keepScroll,
+    endTouched,
+    fixY,
+    fixYsetted,
+    setEndTouched,
+  ]);
+
+  const getProportion = (): number => {};
+
+  const goBackward = () => {
+    const { scrollLeft, scrollWidth, clientWidth } =
+      projectsListRef.current as HTMLUListElement;
+    const width = scrollWidth - clientWidth;
+    const singleWidth = width / 3;
+    projectsListRef.current?.scrollBy({
+      top: 0,
+      left: -singleWidth,
+      behavior: "smooth",
+    });
+  };
+
+  const goForward = () => {
+    const { scrollLeft, scrollWidth, clientWidth } =
+      projectsListRef.current as HTMLUListElement;
+    const width = scrollWidth - clientWidth;
+    const singleWidth = width / 3;
+    projectsListRef.current?.scrollBy({
+      top: 0,
+      left: singleWidth,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className={styles.container} id="projects">
@@ -132,7 +158,19 @@ function Projects({
         <div className={styles.underline}></div>
       </div>
 
-      <div className="projects">
+      <div className={styles.projects}>
+        <IoChevronBackSharp
+          className={styles.prevIcon}
+          color="#8f94fb"
+          size={50}
+          onClick={(e) => goBackward()}
+        />
+        <IoChevronForwardOutline
+          className={styles.nextIcon}
+          color="#8f94fb"
+          size={50}
+          onClick={(e) => goForward()}
+        />
         <ul className={styles.projectsList} ref={projectsListRef}>
           <li key={1}>
             <ProjectItem

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../../styles/Header.module.css";
 import { SiLinkedin, SiGithub, SiMedium } from "react-icons/si";
-import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = ({ endTouched }: { endTouched: boolean }) => {
   return (

@@ -70,8 +70,12 @@
   z-index: -10;
 }
 
+.projects {
+  position: relative;
+}
+
 .projectsList {
-  width: 100;
+  width: 100%;
   display: flex;
   overflow-x: scroll;
   padding: 0 10%;
@@ -83,6 +87,62 @@
 
 .projectsList li {
   min-width: 80vw;
+}
+
+.nextIconsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.nextIcon {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  z-index: 20;
+  cursor: pointer;
+  animation: 4s ease backAndForthNext infinite;
+}
+
+.prevIcon {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 45%;
+  left: 20px;
+  z-index: 20;
+  cursor: pointer;
+  animation: 4s ease backAndForthPrev infinite;
+  animation-delay: 4s;
+}
+
+@keyframes backAndForthNext {
+  0% {
+    transform: translateX(25px);
+  }
+
+  50% {
+    transform: translateX(-25px);
+  }
+
+  100% {
+    transform: translateX(25px);
+  }
+}
+
+@keyframes backAndForthPrev {
+  0% {
+    transform: translateX(-25px);
+  }
+
+  50% {
+    transform: translateX(25px);
+  }
+
+  100% {
+    transform: translateX(-25px);
+  }
 }
 
 @media screen and (max-width: 768px) {
