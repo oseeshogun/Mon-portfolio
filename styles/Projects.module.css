@@ -167,14 +167,22 @@
     height: 80vh;
   }
 
+  .secondProjectItem {
+    margin-left: 80px;
+  }
+
+  .thirdProjectItem {
+    margin-left: 160px;
+  }
+
   .projectDescription {
-    width: 90%;
+    width: 100%;
     left: 5%;
     background: rgba(255, 255, 255, 0.7);
   }
 
   .projectImageContainer {
-    width: 80%;
+    width: 100%;
     right: -10;
   }
 }

@@ -178,6 +178,7 @@ function Projects({
               owner="Faithful SARL"
               ownerLink="https://www.faithful-tech.com/"
               imageUrl="/images/Frame 1.png"
+              index={1}
             />
           </li>
           <li key={2}>
@@ -188,6 +189,7 @@ function Projects({
               owner="Etidlabs"
               ownerLink="http://etidlabs.com/"
               imageUrl="/images/Frame 2.png"
+              index={2}
             />
           </li>
           <li key={3}>
@@ -199,6 +201,7 @@ function Projects({
               owner={undefined}
               ownerLink={undefined}
               imageUrl="/images/Frame 3.png"
+              index={3}
             />
           </li>
         </ul>

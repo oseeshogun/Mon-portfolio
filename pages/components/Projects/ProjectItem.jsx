@@ -8,9 +8,14 @@ const ProjectItem = ({
   owner,
   ownerLink,
   imageUrl,
+  index,
 }) => {
   return (
-    <div className={styles.projectItem}>
+    <div
+      className={`${styles.projectItem} ${
+        index == 2 ? styles.secondProjectItem : ""
+      } ${index == 3 ? styles.thirdProjectItem : ""}`}
+    >
       <div className={styles.projectDescription}>
         <h1>{title}</h1>
         <p className={styles.projectDescriptionText}>{description}</p>
@@ -19,7 +24,10 @@ const ProjectItem = ({
           {owner && (
             <>
               <br />
-              <a href={ownerLink} target="_blank" rel="noreferrer"> {owner}</a>
+              <a href={ownerLink} target="_blank" rel="noreferrer">
+                {" "}
+                {owner}
+              </a>
             </>
           )}
         </p>
