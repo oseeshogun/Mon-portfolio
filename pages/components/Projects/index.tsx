@@ -41,7 +41,7 @@ function Projects({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [setEndTouched]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
