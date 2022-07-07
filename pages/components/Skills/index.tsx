@@ -28,7 +28,7 @@ export default function Skills() {
         <div className={styles.underline}></div>
       </div> */}
       <div className={styles.skillsContainer}>
-        <Marquee speed={isMobile ? 120 : 80} pauseOnHover={isMobile}>
+        <Marquee speed={isMobile ? 120 : 80}>
           <Skill image="/images/skills/html.png" skill="Html & Css" />
           <Skill image="/images/skills/django.png" skill="Django" />
           <Skill image="/images/skills/express.png" skill="Express" />

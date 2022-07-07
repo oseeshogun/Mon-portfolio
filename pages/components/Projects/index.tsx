@@ -25,6 +25,23 @@ function Projects({
   const [y, setY] = useState<number>(0);
   const [fixYsetted, setFixYsetted] = useState<boolean>(false);
   const [fixY, setFixY] = useState<number>(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 720) {
+        setIsMobile(true);
+        setEndTouched(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -106,7 +123,7 @@ function Projects({
       window.removeEventListener("scroll", handleNavigation);
       listProjects?.removeEventListener("scroll", onScroll);
     };
-  }, [y, listIsIntercepting, keepScroll, endTouched, fixY, fixYsetted]);
+  }, [y, listIsIntercepting, keepScroll, endTouched, fixY, fixYsetted, setEndTouched]);
 
   return (
     <div className={styles.container} id="projects">
