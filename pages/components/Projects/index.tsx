@@ -125,8 +125,6 @@ function Projects({
     setEndTouched,
   ]);
 
-  const getProportion = (): number => {};
-
   const goBackward = () => {
     const { scrollLeft, scrollWidth, clientWidth } =
       projectsListRef.current as HTMLUListElement;
