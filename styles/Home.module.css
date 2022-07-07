@@ -3,6 +3,14 @@
   display: none;
 }
 
+.copyright {
+  font-family: "Handlee", cursive;
+  font-size: 1rem;
+  color: #707070;
+  text-align: center;
+  padding: 0 1rem;
+}
+
 @media screen and (max-width: 768px) {
   .cuateFreelancer {
     display: unset;

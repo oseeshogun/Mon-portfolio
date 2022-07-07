@@ -26,6 +26,7 @@ const Home: NextPage = () => {
       <Projects endTouched={endTouched} setEndTouched={setEndTouched} />
       <Skills />
       <GetInTouch />
+      <p className={styles.copyright}>Designed & Developed by Osée Masuaku</p>
     </div>
   );
 };
