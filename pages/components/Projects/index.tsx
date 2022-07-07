@@ -1,17 +1,28 @@
-import { DetailedHTMLProps, useEffect, useRef, useState } from "react";
+import {
+  DetailedHTMLProps,
+  Dispatch,
+  HTMLAttributes,
+  LegacyRef,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "../../../styles/Projects.module.css";
 import ProjectItem from "./ProjectItem";
 
-function Projects() {
-  const projectsListRef = useRef<DetailedHTMLProps<
-    HTMLAttributes<HTMLUListElement>,
-    HTMLUListElement
-  > | null>();
+function Projects({
+  endTouched,
+  setEndTouched,
+}: {
+  endTouched: boolean;
+  setEndTouched: Dispatch<SetStateAction<boolean>>;
+}) {
+  const projectsListRef = useRef<HTMLUListElement | null>(null);
 
   const [listIsIntercepting, setListIsIntercepting] = useState<boolean>(false);
   const [keepScroll, setKeepScroll] = useState<boolean>(true);
   const [y, setY] = useState<number>(0);
-  const [endTouched, setEndTouched] = useState<boolean>(false);
   const [fixYsetted, setFixYsetted] = useState<boolean>(false);
   const [fixY, setFixY] = useState<number>(0);
 
@@ -31,14 +42,14 @@ function Projects() {
       }
       if (!entry.isIntersecting) {
         // ReInit
-        setListIsIntercepting(false);
-        setKeepScroll(true);
-        setEndTouched(false);
-        projectsListRef.current.scrollTo(0, 0);
+        // setListIsIntercepting(false);
+        // setKeepScroll(true);
+        // setEndTouched(false);
+        // projectsListRef.current?.scrollTo(30, 0);
       }
     });
 
-    observer.observe(projectsListRef.current);
+    observer.observe(projectsListRef.current!);
 
     const onScroll = (event: Event) => {
       if (event.target) {
@@ -49,7 +60,7 @@ function Projects() {
         //   projectsListRef.current.clientWidth
         // );
         const { scrollLeft, scrollWidth, clientWidth } =
-          projectsListRef.current;
+          projectsListRef.current as HTMLUListElement;
 
         if (scrollLeft == scrollWidth - clientWidth) {
           // TO SOMETHING HERE
@@ -63,7 +74,7 @@ function Projects() {
 
     const listProjects = projectsListRef.current;
 
-    listProjects.addEventListener("scroll", onScroll);
+    listProjects?.addEventListener("scroll", onScroll);
 
     const handleNavigation = (event: Event) => {
       const window = event.currentTarget as Window;
@@ -77,13 +88,13 @@ function Projects() {
       if (y > window.scrollY) {
         // console.log("scrolling up");
         // console.log("scrolling", event.pageYOffset);
-        if (listIsIntercepting) {
-          projectsListRef.current.scrollBy(-10, 0);
+        if (endTouched) {
+          projectsListRef.current?.scrollBy(-10, 0);
         }
       } else {
         // console.log("scrolling down");
         if (listIsIntercepting) {
-          projectsListRef.current.scrollBy(10, 0);
+          projectsListRef.current?.scrollBy(10, 0);
         }
       }
       setY(window.scrollY);
@@ -93,12 +104,12 @@ function Projects() {
     return () => {
       // return a cleanup function to unregister our function since its gonna run multiple times
       window.removeEventListener("scroll", handleNavigation);
-      listProjects.removeEventListener("scroll", onScroll);
+      listProjects?.removeEventListener("scroll", onScroll);
     };
   }, [y, listIsIntercepting, keepScroll, endTouched, fixY, fixYsetted]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="projects">
       <div className={styles.titleContainer}>
         <h1 className={styles.title}>Some things I’ve worked on</h1>
         <div className={styles.underline}></div>

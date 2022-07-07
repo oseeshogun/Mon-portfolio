@@ -1,0 +1,43 @@
+.container {
+  margin: 20vh 0%;
+}
+
+.titleContainer {
+  margin: 0 10%;
+}
+
+.title {
+  color: #8f94fb;
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.underline {
+  width: 30%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #8f94fb;
+}
+
+.skillsContainer {
+  margin: 10vh 0;
+}
+
+.skillImage {
+  object-fit: contain;
+  z-index: 20;
+}
+
+.skillContainer {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillDescription {
+  font-size: 14px;
+  color: grey;
+  text-align: center;
+}

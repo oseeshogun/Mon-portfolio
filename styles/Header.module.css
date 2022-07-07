@@ -15,10 +15,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 
 .icon {
   margin: 0 10px;
+  z-index: 10;
 }
 
 .onglets {

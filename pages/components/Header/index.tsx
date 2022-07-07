@@ -4,7 +4,7 @@ import styles from "../../../styles/Header.module.css";
 import { SiLinkedin, SiGithub, SiMedium } from "react-icons/si";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Header = () => {
+const Header = ({ endTouched }: { endTouched: boolean }) => {
   return (
     <nav className={styles.header}>
       <Image
@@ -13,11 +13,31 @@ const Header = () => {
         className={styles.rectangleImage}
         layout="fill"
       />
+
       <div className={styles.topHeader}>
         <div className={styles.icons}>
-          <SiLinkedin size="1.5rem" color="white" className={styles.icon} />
-          <SiGithub size="1.5rem" color="white" className={styles.icon} />
-          <SiMedium size="1.5rem" color="white" className={styles.icon} />
+          <a
+            href="https://www.linkedin.com/in/osee-masuaku/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SiLinkedin size="1.5rem" color="white" className={styles.icon} />
+          </a>
+          <a
+            href="https://github.com/oseeshogun"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SiGithub size="1.5rem" color="white" className={styles.icon} />
+          </a>
+
+          <a
+            href="https://omasuaku.medium.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <SiMedium size="1.5rem" color="white" className={styles.icon} />
+          </a>
         </div>
         <ul className={styles.onglets}>
           <li>
@@ -26,24 +46,26 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="#home">
-              <a className={styles.ongletItem}>About Me</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="#home">
+            <Link href="#projects">
               <a className={styles.ongletItem}>Projects</a>
             </Link>
           </li>
-          <li>
-            <Link href="#home">
-              <a className={styles.ongletItem}>Contacts</a>
-            </Link>
-          </li>
+
+          {endTouched ? (
+            <li>
+              <Link href="#contact">
+                <a className={styles.ongletItem}>Contact</a>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <a className={styles.ongletItem}>Contact</a>
+            </li>
+          )}
         </ul>
-        <div className={styles.mobileHamburger}>
+        {/* <div className={styles.mobileHamburger}>
           <GiHamburgerMenu size="1.5rem" color="white" />
-        </div>
+        </div> */}
       </div>
       <div className={styles.cuateFreelancer}>
         <Image
