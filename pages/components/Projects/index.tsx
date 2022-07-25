@@ -44,7 +44,11 @@ function Projects({
   }
 
   const getTransform: (progress: number) => string = (progress: number) => {
-    const scrollSize = window.innerWidth > 700 ? 180 : 240;
+    let scrollSize = 180;
+    if (typeof window !== "undefined") {
+      // Client-side-only code
+      scrollSize = window.innerWidth > 700 ? 180 : 240;
+    }
     return `translateX(-${(progress * scrollSize)}vw)`;
   }
 
