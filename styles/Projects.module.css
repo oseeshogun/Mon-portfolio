@@ -1,5 +1,6 @@
 .container {
   margin: 20vh 0%;
+  height: 280vh;
 }
 
 .titleContainer {
@@ -24,7 +25,7 @@
   height: 90vh;
   width: 100%;
   padding: 0 10%;
-  margin-top: 10%;
+  margin-top: 30px;
 }
 
 .projectDescription {
@@ -70,15 +71,16 @@
   z-index: -10;
 }
 
-.projects {
-  position: relative;
-}
 
 .projectsList {
   width: 100%;
+  height: 90vh;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
   padding: 0 10%;
+  position: sticky;
+  top: 0;
 }
 
 .projectsList::-webkit-scrollbar {
@@ -87,7 +89,10 @@
 
 .projectsList li {
   min-width: 80vw;
+  position: absolute;
+  top: 0;
 }
+
 
 .nextIconsContainer {
   display: flex;
