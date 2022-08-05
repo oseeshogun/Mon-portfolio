@@ -13,7 +13,12 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <Header  endTouched={endTouched} />
+      <Head>
+        <title>Portfolio of Osée Masuaku</title>
+        <meta name="description" content="Portfolio of Osée Masuaku,  software engineer specializing in building exceptional web and mobile applications." />
+        <meta property="og:title" content="Developer - Osée Masuaku" />
+      </Head>
+      <Header endTouched={endTouched} />
       <div className={styles.cuateFreelancer}>
         <Image
           src="/Freelancer-cuate.svg"
