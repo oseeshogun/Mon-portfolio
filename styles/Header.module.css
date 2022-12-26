@@ -104,7 +104,7 @@
 
   .headerTextContainer {
     width: 100%;
-    top: 15%;
+    top: 10%;
     padding: 20px;
   }
 
@@ -119,5 +119,15 @@
 @media screen and (min-width: 500px) and (max-width: 768px) {
   .description {
     bottom: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .headerTextContainer {
+    top: 5%;
+  }
+
+  .description {
+    bottom: 18%;
   }
 }
