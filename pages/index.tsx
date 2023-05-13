@@ -14,9 +14,12 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Portfolio of Osée Masuaku</title>
-        <meta name="description" content="Portfolio of Osée Masuaku,  software engineer specializing in building exceptional web and mobile applications." />
-        <meta property="og:title" content="Developer - Osée Masuaku" />
+        <title>Osée Masuaku | Software Engineer | Portfolio</title>
+        <meta name="description" content="Osée Masuaku is a software engineer specializing in building exceptional web and mobile applications. View his portfolio to see his work and skills." />
+        <meta name="keywords" content="Osée Masuaku, software engineer, web development, mobile development, portfolio" />
+        <meta property="og:title" content="Osée Masuaku | Software Engineer | Portfolio" />
+        <meta property="og:description" content="View Osée Masuaku's portfolio to see his exceptional web and mobile applications." />
+        <meta property="og:url" content="https://oseemasuaku.com/" />
       </Head>
       <Header endTouched={endTouched} />
       <div className={styles.cuateFreelancer}>
