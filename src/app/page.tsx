@@ -41,18 +41,15 @@ export default function Home() {
               Explorer
             </div>
             <div className="space-y-1">
-              <button className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
+              <Link href="/" className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
                 <DiMarkdown className="mr-2" /> README.md
-              </button>
-              <button className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
+              </Link>
+              <Link href="/about" className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
                 <DiReact className="mr-2" /> about.tsx
-              </button>
-              <button className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
+              </Link>
+              <Link href="/projects" className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
                 <DiReact className="mr-2" /> projects.tsx
-              </button>
-              <button className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm">
-                <DiReact className="mr-2" /> contact.tsx
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -103,6 +100,7 @@ export default function Home() {
                   {"// Quick Links"}
                 </h2>
                 <div className="grid grid-cols-2 gap-6">
+                  <Link href="/projects" className="block">
                   <div className="p-6 bg-vscode-hover/80 rounded-lg hover:bg-vscode-hover/60 transition-colors border border-vscode-border/80 group cursor-pointer backdrop-blur-sm hover:backdrop-blur-md">
                     <h3 className="text-vscode-active font-medium font-mono flex items-center">
                       <span className="mr-2">📂</span> Projects
@@ -111,6 +109,8 @@ export default function Home() {
                       Explore my latest work and open-source contributions
                     </p>
                   </div>
+                </Link>
+                <Link href="/about" className="block">
                   <div className="p-6 bg-vscode-hover/80 rounded-lg hover:bg-vscode-hover/60 transition-colors border border-vscode-border/80 group cursor-pointer backdrop-blur-sm hover:backdrop-blur-md">
                     <h3 className="text-vscode-active font-medium font-mono flex items-center">
                       <span className="mr-2">👨‍💻</span> About Me
@@ -119,6 +119,7 @@ export default function Home() {
                       Learn about my journey and expertise
                     </p>
                   </div>
+                </Link>
                 </div>
               </div>
 
