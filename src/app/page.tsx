@@ -18,7 +18,7 @@ export default function Home() {
         }}
       />
       <div className="relative z-10 flex flex-col h-full bg-gradient-to-b from-vscode-bg/95 to-vscode-bg/90 backdrop-blur-[2px]">
-        <div className="flex items-center h-9 bg-vscode-sidebar border-b border-vscode-border px-4">
+        <div className="flex items-center h-9 bg-vscode-sidebar border-b border-vscode-border px-2 sm:px-4 overflow-x-auto">
           <div className="flex space-x-2">
             <div className="flex items-center space-x-2 px-3 py-1 bg-vscode-bg border-t border-vscode-active">
               <span className="text-sm font-mono">README.md</span>
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-1">
-          <div className="w-48 bg-vscode-sidebar border-r border-vscode-border p-2">
+          <div className="hidden md:block w-48 bg-vscode-sidebar border-r border-vscode-border p-2">
             <div className="text-sm uppercase text-vscode-muted mb-2 font-medium">
               Explorer
             </div>
@@ -54,12 +54,12 @@ export default function Home() {
           </div>
 
           <div className="flex-1 p-6 overflow-auto">
-            <div className="max-w-3xl mx-auto space-y-6 relative">
+            <div className="max-w-3xl mx-auto space-y-6 relative px-4 sm:px-6 md:px-0">
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold text-vscode-text">
+                <h1 className="text-3xl sm:text-4xl font-bold text-vscode-text">
                   👋 Hi, I am Osée Masuaku
                 </h1>
-                <h2 className="text-2xl text-vscode-active font-mono">
+                <h2 className="text-xl sm:text-2xl text-vscode-active font-mono">
                   DEVELOPER
                 </h2>
                 <p className="text-vscode-text text-lg leading-relaxed">
@@ -99,7 +99,7 @@ export default function Home() {
                 <h2 className="text-xl font-semibold mb-6 text-vscode-text font-mono">
                   {"// Quick Links"}
                 </h2>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <Link href="/projects" className="block">
                   <div className="p-6 bg-vscode-hover/80 rounded-lg hover:bg-vscode-hover/60 transition-colors border border-vscode-border/80 group cursor-pointer backdrop-blur-sm hover:backdrop-blur-md">
                     <h3 className="text-vscode-active font-medium font-mono flex items-center">
@@ -127,7 +127,7 @@ export default function Home() {
                 <h2 className="text-xl font-semibold mb-6 text-vscode-text font-mono">
                   {"// Tech Stack"}
                 </h2>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                   {[
                     { name: "JavaScript", icon: <DiJavascript /> },
                     { name: "Python", icon: <DiPython /> },

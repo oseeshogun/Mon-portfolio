@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="flex-1 p-6 overflow-auto">
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-3xl mx-auto space-y-8 px-4 sm:px-6 md:px-0">
         <div>
-          <h1 className="text-3xl font-bold text-vscode-text mb-4">About Me</h1>
-          <p className="text-vscode-text text-lg leading-relaxed">
+          <h1 className="text-2xl sm:text-3xl font-bold text-vscode-text mb-4">About Me</h1>
+          <p className="text-vscode-text text-base sm:text-lg leading-relaxed">
             I&apos;m a passionate full-stack mobile and web developer with over
             5 years experience. With expertise covering every stage of development,
             from initial design to production deployment, I&apos;m committed to
@@ -24,7 +24,7 @@ export default function About() {
             {"// Experience"}
           </h2>
           <div className="space-y-6">
-            <div className="p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm">
+            <div className="p-4 sm:p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors">
               <h3 className="text-vscode-active font-medium mb-2">
                 <a href="https://schoolap.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Mobile Developer @ Schoolap</a>
               </h3>
@@ -35,7 +35,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm">
+            <div className="p-4 sm:p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors">
               <h3 className="text-vscode-active font-medium mb-2">
                 <a href="https://kadea.co/" target="_blank" rel="noopener noreferrer" className="hover:underline">Full-Stack Developer @ Kinshasa Digital</a>
               </h3>
@@ -46,7 +46,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm">
+            <div className="p-4 sm:p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors">
               <h3 className="text-vscode-active font-medium mb-2">
                 <a href="https://faithful-tech.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Web & Mobile Developer @ Faithful SARL</a>
               </h3>
@@ -58,7 +58,7 @@ export default function About() {
               </ul>
             </div>
 
-            <div className="p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm">
+            <div className="p-4 sm:p-6 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors">
               <h3 className="text-vscode-active font-medium mb-2">
                 <a href="https://www.etidlabs.com/" target="_blank" rel="noopener noreferrer" className="hover:underline">Mobile & Web Developer @ Etidlabs</a>
               </h3>
@@ -75,29 +75,29 @@ export default function About() {
           <h2 className="text-xl font-semibold text-vscode-text font-mono">
             {"// Core Skills"}
           </h2>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm flex items-center space-x-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-3 sm:p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors flex items-center space-x-3">
               <DiJavascript className="w-8 h-8 text-yellow-400" />
               <div>
                 <h3 className="font-medium text-vscode-active">JavaScript</h3>
                 <p className="text-sm text-vscode-text">Advanced</p>
               </div>
             </div>
-            <div className="p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm flex items-center space-x-3">
+            <div className="p-3 sm:p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors flex items-center space-x-3">
               <DiPython className="w-8 h-8 text-blue-400" />
               <div>
                 <h3 className="font-medium text-vscode-active">Python</h3>
                 <p className="text-sm text-vscode-text">Advanced</p>
               </div>
             </div>
-            <div className="p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm flex items-center space-x-3">
+            <div className="p-3 sm:p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors flex items-center space-x-3">
               <DiReact className="w-8 h-8 text-blue-500" />
               <div>
                 <h3 className="font-medium text-vscode-active">React</h3>
                 <p className="text-sm text-vscode-text">Expert</p>
               </div>
             </div>
-            <div className="p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm flex items-center space-x-3">
+            <div className="p-3 sm:p-4 bg-vscode-hover/80 rounded-lg border border-vscode-border/80 backdrop-blur-sm hover:border-vscode-active/50 transition-colors flex items-center space-x-3">
               <SiFlutter className="w-8 h-8 text-cyan-400" />
               <div>
                 <h3 className="font-medium text-vscode-active">Flutter</h3>
@@ -110,9 +110,10 @@ export default function About() {
         <div className="flex justify-center pt-8">
           <Link
             href="/"
-            className="px-6 py-2 bg-vscode-active text-white rounded-lg hover:bg-opacity-90 transition-colors font-mono"
+            className="px-6 py-2 bg-vscode-active text-white rounded-lg hover:bg-opacity-90 transition-colors font-mono group flex items-center space-x-2"
           >
-            {"<- Back to Home"}
+            <span className="group-hover:-translate-x-1 transition-transform">&larr;</span>
+            <span>Back to Home</span>
           </Link>
         </div>
       </div>
