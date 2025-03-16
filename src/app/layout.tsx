@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1e1e1e] text-[#d4d4d4] min-h-screen`}
       >
         <div className="flex h-screen overflow-hidden">
-          <nav className="w-12 bg-[#333333] flex flex-col items-center py-4 border-r border-[#424242]">
+          <nav className="w-12 bg-[#333333] flex flex-col items-center py-4 border-r border-[#424242] max-lg:hidden">
             <div className="flex flex-col gap-4">
               <button className="p-2 hover:bg-[#424242] rounded">
                 <svg
