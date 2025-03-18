@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Explorer from "@/components/ui/explorer";
+import OpenTabs from "@/components/ui/open-tabs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,7 +82,43 @@ export default function RootLayout({
               </button>
             </div>
           </nav>
-          <div className="flex-1 flex flex-col">{children}</div>
+          <div className="flex-1 flex flex-col">
+            <main className="flex flex-col min-h-screen font-sans relative">
+              <div
+                className="absolute inset-0 z-0 before:absolute before:inset-0 before:bg-black/80"
+                style={{
+                  backgroundImage:
+                    'url("/demon_slayer_tanjiro_kamado_standing_in_forest_with_background_of_moon_blue_sky_and_trees_hd_anime-1280x720.jpg")',
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+              <div className="relative z-10 flex flex-col min-h-screen bg-gradient-to-b from-vscode-bg/95 to-vscode-bg/90 backdrop-blur-[2px]">
+                <div className="flex items-center h-9 bg-vscode-sidebar border-b border-vscode-border px-2 sm:px-4 overflow-x-auto">
+                  <OpenTabs />
+                </div>
+
+                <div className="flex flex-1 overflow-hidden">
+                  <Explorer />
+
+                  {children}
+                </div>
+
+                <div className="h-6 bg-vscode-active text-white text-xs flex items-center px-4 font-mono">
+                  <Link
+                    href="https://www.linkedin.com/in/osee-masuaku/"
+                    target="_blank"
+                    className="flex items-center space-x-4"
+                  >
+                    <span>🌟 Ready to collaborate</span>
+                    <span>TypeScript</span>
+                    <span>UTF-8</span>
+                  </Link>
+                </div>
+              </div>
+            </main>
+          </div>
         </div>
       </body>
     </html>
