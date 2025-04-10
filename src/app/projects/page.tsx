@@ -14,14 +14,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Agora Mall",
-    description:
-      "E-commerce online mall platform with stores and articles management. Built with a modern tech stack for optimal performance and user experience.",
-    technologies: ["Next.js", "Django", "Python", "PostgreSQL"],
-    image: "/images/projects/agora-mall.png",
-    demo: "https://www.agoramall.shop",
-  },
-  {
     title: "Code du Travail RDC",
     description:
       "Open source Android application for accessing and understanding Congo's labor code. Achieved over 20,000 downloads on Play Store.",
