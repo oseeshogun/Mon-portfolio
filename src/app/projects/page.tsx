@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "Code du Travail RDC",
     description:
       "Open source Android application for accessing and understanding Congo's labor code. Achieved over 20,000 downloads on Play Store.",
-    technologies: ["Kotlin", "Jetpack Compose", "Android"],
+    technologies: ["Flutter", "Dart", "Android"],
     image:
       "https://play-lh.googleusercontent.com/g1irMu4dwkIvYpqK275HcUVnZBBaKrrceWryF19G2BfamTqmiIvzgT23Yv-wJrfFOVHC=w480-h960-rw",
     github: "https://github.com/oseeshogun/work_code",
@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "Mituna",
     description:
       "Interactive quiz application focused on Congo Kinshasa history, helping users learn about their country's rich heritage.",
-    technologies: ["Android", "Mobile Development", "Kotlin"],
+    technologies: ["Flutter", "Dart", "Android"],
     image:
       "https://play-lh.googleusercontent.com/zS127qaLkhgNbEXRDMnVtFd_brM7K1xNUShAk01coTYdgc49ZJU1sQQ8XQPQKT8Ing=w480-h960-rw",
     demo: "https://play.google.com/store/apps/details?id=deepcolt.com.mituna",
