@@ -1,5 +1,6 @@
 import * as React from "react";
-import { SiLinkedin, SiGithub, SiMedium } from "react-icons/si";
+import { SiGithub, SiMedium } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
 import Link from "next/link";
 import TechStack from "@/components/TechStack";
 
@@ -25,7 +26,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-vscode-text hover:text-vscode-active transition-colors"
             >
-              <SiLinkedin className="w-6 h-6" />
+              <FaLinkedinIn className="w-6 h-6" />
             </a>
             <a
               href="https://github.com/oseeshogun"
