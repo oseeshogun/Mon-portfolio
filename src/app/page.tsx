@@ -1,8 +1,7 @@
 import * as React from "react";
 import { SiLinkedin, SiGithub, SiMedium } from "react-icons/si";
-import { DiJavascript, DiPython } from "react-icons/di";
-import Image from "next/image";
 import Link from "next/link";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
@@ -79,36 +78,7 @@ export default function Home() {
           <h2 className="text-xl font-semibold mb-6 text-vscode-text font-mono">
             {"// Tech Stack"}
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
-            {[
-              { name: "JavaScript", icon: <DiJavascript /> },
-              { name: "Python", icon: <DiPython /> },
-              {
-                name: "Flutter",
-                icon: (
-                  <Image
-                    src="/flutter-svgrepo-com.svg"
-                    alt="Flutter"
-                    width={24}
-                    height={24}
-                  />
-                ),
-              },
-              { name: "TypeScript", icon: "🔷" },
-              { name: "React", icon: "⚛️" },
-              { name: "Node.js", icon: "🟩" },
-              { name: "Next.js", icon: "⚡" },
-              { name: "TailwindCSS", icon: "🎨" },
-            ].map((tech) => (
-              <div
-                key={tech.name}
-                className="px-4 py-3 bg-vscode-hover/80 rounded-lg text-sm text-vscode-text border border-vscode-border/80 font-mono flex items-center space-x-2 hover:border-vscode-active transition-colors backdrop-blur-sm hover:backdrop-blur-md"
-              >
-                <span>{tech.icon}</span>
-                <span>{tech.name}</span>
-              </div>
-            ))}
-          </div>
+          <TechStack />
         </div>
       </div>
     </div>
