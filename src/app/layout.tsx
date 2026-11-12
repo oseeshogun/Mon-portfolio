@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Explorer from "@/components/ui/explorer";
 import OpenTabs from "@/components/ui/open-tabs";
+import PageBackdrop from "@/components/ui/page-backdrop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,7 +95,7 @@ export default function RootLayout({
                   backgroundRepeat: "no-repeat",
                 }}
               />
-              <div className="relative z-10 flex flex-col min-h-screen bg-gradient-to-b from-vscode-bg/95 to-vscode-bg/90 backdrop-blur-[2px]">
+              <PageBackdrop>
                 <div className="flex items-center h-9 bg-vscode-sidebar border-b border-vscode-border px-2 sm:px-4 overflow-x-auto">
                   <OpenTabs />
                 </div>
@@ -116,7 +117,7 @@ export default function RootLayout({
                     <span>UTF-8</span>
                   </Link>
                 </div>
-              </div>
+              </PageBackdrop>
             </main>
           </div>
         </div>
