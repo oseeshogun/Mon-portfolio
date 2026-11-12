@@ -30,5 +30,5 @@ body {
 .post-content img { width: 100%; height: auto; border-radius: 0.5rem; border: 1px solid rgba(66, 66, 66, 0.8); background: #fff; }
 .post-content blockquote { border-left: 3px solid #007acc; padding: 0.5rem 1rem; background: rgba(37, 37, 38, 0.8); border-radius: 0 0.5rem 0.5rem 0; font-size: 0.95rem; }
 .post-content code { font-family: var(--font-mono); font-size: 0.875em; background: rgba(37, 37, 38, 0.9); padding: 0.1rem 0.35rem; border-radius: 0.25rem; }
-.post-content pre { background: #1a1a1a; border: 1px solid rgba(66, 66, 66, 0.8); border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
+.post-content pre { line-height: 1.5; background: #1a1a1a; border: 1px solid rgba(66, 66, 66, 0.8); border-radius: 0.5rem; padding: 1rem; overflow-x: auto; }
 .post-content pre code { background: none; padding: 0; font-size: 0.85rem; }
