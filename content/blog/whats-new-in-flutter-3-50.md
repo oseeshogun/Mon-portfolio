@@ -26,7 +26,7 @@ C'est la grande nouvelle. Jusqu'ici, appeler du code natif passait par les *plat
 
 - **FFIgen** pour C et Objective-C ;
 - **JNIgen** pour Java et Kotlin ;
-- le **mode d'interopérabilité native de Pigeon**, disponible en préversion, qui s'appuie sur les deux générateurs pour produire des bindings typés sur iOS, macOS et Android.
+- le **native interop mode de Pigeon**, disponible en préversion, qui s'appuie sur les deux générateurs pour produire des bindings typés sur iOS, macOS et Android.
 
 Concrètement, on peut appeler les API natives directement, y compris **de façon synchrone** ou depuis un **isolate d'arrière-plan**, sans passer par la sérialisation.
 
