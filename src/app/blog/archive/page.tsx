@@ -3,8 +3,10 @@ import Link from "next/link";
 import { formatDate, getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Tous les articles - Osee Masuaku",
-  description: "Archive de tous mes articles, classés par année",
+  title: "Tous les articles",
+  description: "Archive de tous les articles du blog d'Osée Masuaku, classés par année.",
+  alternates: { canonical: "/blog/archive" },
+  openGraph: { url: "/blog/archive", title: "Tous les articles - Osée Masuaku" },
 };
 
 export default function Archive() {

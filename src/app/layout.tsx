@@ -4,6 +4,9 @@ import "./globals.css";
 import Link from "next/link";
 import Explorer from "@/components/ui/explorer";
 import OpenTabs from "@/components/ui/open-tabs";
+import PageBackdrop from "@/components/ui/page-backdrop";
+import JsonLd from "@/components/JsonLd";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL, SOCIALS } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +19,40 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Osee Masuaku - Developer Portfolio",
-  description: "Full-stack developer portfolio in VS Code style",
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_TITLE, template: `%s | ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  keywords: [
+    "Osée Masuaku",
+    "full-stack developer",
+    "Flutter developer",
+    "mobile developer",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "portfolio",
+  ],
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": "/feed.xml" },
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    locale: "en_US",
+  },
+  twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +65,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1e1e1e] text-[#d4d4d4] min-h-screen`}
       >
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": `${SITE_URL}/#person`,
+                name: SITE_NAME,
+                url: SITE_URL,
+                jobTitle: "Full-stack mobile and web developer",
+                sameAs: SOCIALS,
+              },
+              {
+                "@type": "WebSite",
+                "@id": `${SITE_URL}/#website`,
+                url: SITE_URL,
+                name: SITE_NAME,
+                description: SITE_DESCRIPTION,
+                publisher: { "@id": `${SITE_URL}/#person` },
+              },
+            ],
+          }}
+        />
         <div className="flex h-screen overflow-hidden">
           <nav className="w-12 bg-[#333333] flex flex-col items-center py-4 border-r border-[#424242] max-lg:hidden">
             <div className="flex flex-col gap-4">
@@ -94,7 +152,7 @@ export default function RootLayout({
                   backgroundRepeat: "no-repeat",
                 }}
               />
-              <div className="relative z-10 flex flex-col min-h-screen bg-gradient-to-b from-vscode-bg/95 to-vscode-bg/90 backdrop-blur-[2px]">
+              <PageBackdrop>
                 <div className="flex items-center h-9 bg-vscode-sidebar border-b border-vscode-border px-2 sm:px-4 overflow-x-auto">
                   <OpenTabs />
                 </div>
@@ -116,7 +174,7 @@ export default function RootLayout({
                     <span>UTF-8</span>
                   </Link>
                 </div>
-              </div>
+              </PageBackdrop>
             </main>
           </div>
         </div>
