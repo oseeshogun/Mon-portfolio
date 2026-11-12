@@ -26,6 +26,12 @@ const Explorer = () => {
         >
           <DiReact className="mr-2" /> projects.tsx
         </Link>
+        <Link
+          href="/blog"
+          className="w-full flex items-center text-left px-2 py-1 hover:bg-vscode-hover rounded transition-colors font-mono text-sm"
+        >
+          <DiReact className="mr-2" /> blog.tsx
+        </Link>
       </div>
     </div>
   );

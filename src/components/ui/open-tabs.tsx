@@ -43,6 +43,18 @@ const OpenTabs = () => {
           ×
         </button>
       </Link>
+      <Link
+        href="/blog"
+        className={cn(
+          "flex items-center space-x-2 px-3 py-1",
+          pathname.startsWith("/blog") ? "border-t border-vscode-active" : ""
+        )}
+      >
+        <span className="text-sm font-mono">blog.tsx</span>
+        <button className="text-vscode-muted hover:text-vscode-text transition-colors">
+          ×
+        </button>
+      </Link>
     </div>
   );
 };
