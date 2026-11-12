@@ -72,6 +72,16 @@ export default function Home() {
                 </p>
               </div>
             </Link>
+            <Link href="/blog" className="block">
+              <div className="p-6 bg-vscode-hover/80 rounded-lg hover:bg-vscode-hover/60 transition-colors border border-vscode-border/80 group cursor-pointer backdrop-blur-sm hover:backdrop-blur-md">
+                <h3 className="text-vscode-active font-medium font-mono flex items-center">
+                  <span className="mr-2">📝</span> Blog
+                </h3>
+                <p className="text-sm text-vscode-text mt-3 group-hover:text-vscode-active transition-colors">
+                  Articles on web and mobile development
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
 
