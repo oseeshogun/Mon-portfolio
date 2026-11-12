@@ -12,7 +12,15 @@ export default function Blog() {
   return (
     <div className="flex-1 p-6 overflow-auto">
       <div className="max-w-3xl mx-auto space-y-6 px-4 sm:px-6 md:px-0">
-        <h1 className="text-2xl sm:text-3xl font-bold text-vscode-text">Blog</h1>
+        <div className="flex items-baseline justify-between gap-4">
+          <h1 className="text-2xl sm:text-3xl font-bold text-vscode-text">Blog</h1>
+          <Link
+            href="/blog/archive"
+            className="text-sm font-mono text-vscode-muted hover:text-vscode-active"
+          >
+            Tous les articles →
+          </Link>
+        </div>
         <div className="space-y-4">
           {sorted.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
