@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatDate, getPost, posts } from "@/lib/posts";
+import { formatDate, getPost, getPosts } from "@/lib/posts";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+  return getPosts().map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -23,7 +23,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <div className="flex-1 p-6 overflow-auto">
-      <article className="max-w-3xl mx-auto space-y-4 px-4 sm:px-6 md:px-0">
+      <article className="max-w-3xl mx-auto space-y-4 pb-10 px-4 sm:px-6 md:px-0">
         <Link
           href="/blog"
           className="text-sm font-mono text-vscode-muted hover:text-vscode-active"
@@ -38,28 +38,10 @@ export default async function PostPage({ params }: Props) {
             {formatDate(post.date)}
           </time>
         </header>
-        {post.content.map((b, i) => {
-          if (b.type === "h2")
-            return (
-              <h2 key={i} className="text-xl font-semibold text-vscode-text font-mono pt-2">
-                {b.text}
-              </h2>
-            );
-          if (b.type === "code")
-            return (
-              <pre
-                key={i}
-                className="p-4 rounded-lg bg-vscode-sidebar border border-vscode-border/80 overflow-x-auto text-sm font-mono"
-              >
-                <code>{b.text}</code>
-              </pre>
-            );
-          return (
-            <p key={i} className="text-vscode-text leading-relaxed">
-              {b.text}
-            </p>
-          );
-        })}
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
     </div>
   );

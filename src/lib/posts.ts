@@ -1,51 +1,74 @@
-export type PostBlock =
-  | { type: "p"; text: string }
-  | { type: "h2"; text: string }
-  | { type: "code"; lang?: string; text: string };
+import fs from "node:fs";
+import path from "node:path";
+import { marked } from "marked";
 
 export type Post = {
   slug: string;
   title: string;
   description: string;
-  date: string; // ISO yyyy-mm-dd
+  date: string; // yyyy-mm-dd
   tags: string[];
-  content: PostBlock[];
+  cover?: string;
+  html: string;
 };
 
-// Add new posts at the top of this array. The slug becomes the URL: /blog/<slug>.
-export const posts: Post[] = [
-  {
-    slug: "hello-world",
-    title: "Hello, World: Why I Started This Blog",
-    description:
-      "A short note on why I'm writing, and what to expect in upcoming posts.",
-    date: "2026-11-12",
-    tags: ["meta"],
-    content: [
-      {
-        type: "p",
-        text: "I build web and mobile applications, and I learn a lot by solving problems along the way. This blog is where I'll write those lessons down.",
-      },
-      { type: "h2", text: "What to expect" },
-      {
-        type: "p",
-        text: "Practical posts on Flutter, React and Next.js, backend work, and the occasional design detail. Short, concrete, and based on real projects.",
-      },
-      {
-        type: "code",
-        lang: "ts",
-        text: 'const post = { status: "more coming soon" };',
-      },
-    ],
-  },
-];
+const POSTS_DIR = path.join(process.cwd(), "content", "blog");
+
+// Minimal frontmatter parser: `key: value` lines, values may be quoted,
+// and `[a, b]` is parsed as a list.
+function parseFrontmatter(raw: string) {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return { data: {} as Record<string, string | string[]>, body: raw };
+  const data: Record<string, string | string[]> = {};
+  for (const line of match[1].split(/\r?\n/)) {
+    const i = line.indexOf(":");
+    if (i === -1) continue;
+    const key = line.slice(0, i).trim();
+    let value = line.slice(i + 1).trim();
+    if (value.startsWith("[") && value.endsWith("]")) {
+      data[key] = value
+        .slice(1, -1)
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+      continue;
+    }
+    if (/^(".*"|'.*')$/.test(value)) value = value.slice(1, -1);
+    data[key] = value;
+  }
+  return { data, body: match[2] };
+}
+
+function readPost(file: string): Post {
+  const slug = file.replace(/\.md$/, "");
+  const raw = fs.readFileSync(path.join(POSTS_DIR, file), "utf8");
+  const { data, body } = parseFrontmatter(raw);
+  return {
+    slug,
+    title: String(data.title ?? slug),
+    description: String(data.description ?? ""),
+    date: String(data.date ?? ""),
+    tags: Array.isArray(data.tags) ? data.tags : [],
+    cover: data.cover ? String(data.cover) : undefined,
+    html: marked.parse(body, { async: false }) as string,
+  };
+}
+
+export function getPosts(): Post[] {
+  if (!fs.existsSync(POSTS_DIR)) return [];
+  return fs
+    .readdirSync(POSTS_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map(readPost)
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
 
 export function getPost(slug: string) {
-  return posts.find((p) => p.slug === slug);
+  return getPosts().find((p) => p.slug === slug);
 }
 
 export function formatDate(iso: string) {
-  return new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", {
+  return new Date(iso + "T00:00:00Z").toLocaleDateString("fr-FR", {
     year: "numeric",
     month: "long",
     day: "numeric",

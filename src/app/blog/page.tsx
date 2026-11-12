@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { formatDate, posts } from "@/lib/posts";
+import { formatDate, getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog - Osee Masuaku",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-  const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));
+  const sorted = getPosts();
   return (
     <div className="flex-1 p-6 overflow-auto">
       <div className="max-w-3xl mx-auto space-y-6 px-4 sm:px-6 md:px-0">
