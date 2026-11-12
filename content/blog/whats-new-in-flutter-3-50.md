@@ -10,6 +10,10 @@ cover: https://flutter.dev/assets/hero_image.b6c0d9689da0f65c9bb69711c24105f7.we
 
 ![Flutter 3.50 sort du four avec Interop, Impeller et Genkit](https://flutter.dev/assets/hero_image.b6c0d9689da0f65c9bb69711c24105f7.webp)
 
+<div class="video-embed">
+<iframe src="https://www.youtube-nocookie.com/embed/K5Kk-C3IL94" title="Vidéo sur Flutter 3.50" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ## Une release portée par la communauté
 
 Avant de parler technique, les chiffres. Sur ce cycle de release, **188 contributeurs**, dont **69 qui contribuaient pour la première fois**, ont intégré plus de **1 200 commits**. Une bonne partie des améliorations dont je parle plus bas viennent directement de membres de la communauté.
