@@ -3,12 +3,12 @@ title: "Flutter 3.50 : ce qu'il faut retenir"
 description: "Interopérabilité native stable, WebAssembly sur Safari et Firefox, packages de design découplés, durcissement d'Android et iOS plus réactif."
 date: 2026-11-12
 tags: [flutter, dart, mobile]
-cover: /blog/flutter-3-50/cover.webp
+cover: https://flutter.dev/assets/hero_image.b6c0d9689da0f65c9bb69711c24105f7.webp
 ---
 
 > Cet article est basé sur le post officiel de l'équipe Flutter : [What's new in Flutter 3.50](https://flutter.dev/blog/whats-new-in-flutter-3-50), par Emma Twersky (11 novembre 2026). Ce n'est pas une traduction : j'ai sélectionné et reformulé les points qui me semblent les plus importants.
 
-![Flutter 3.50 sort du four avec Interop, Impeller et Genkit](/blog/flutter-3-50/cover.webp)
+![Flutter 3.50 sort du four avec Interop, Impeller et Genkit](https://flutter.dev/assets/hero_image.b6c0d9689da0f65c9bb69711c24105f7.webp)
 
 ## Une release portée par la communauté
 
