@@ -3,8 +3,11 @@ import Link from "next/link";
 import { formatDate, getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blog - Osee Masuaku",
-  description: "Articles on web and mobile development",
+  title: "Blog",
+  description:
+    "Articles on Flutter, Dart and web and mobile development by Osée Masuaku (in French).",
+  alternates: { canonical: "/blog", types: { "application/rss+xml": "/feed.xml" } },
+  openGraph: { url: "/blog", title: "Blog - Osée Masuaku" },
 };
 
 export default function Blog() {
