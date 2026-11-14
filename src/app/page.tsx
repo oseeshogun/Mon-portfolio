@@ -3,6 +3,7 @@ import { SiGithub, SiMedium } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa6";
 import Link from "next/link";
 import TechStack from "@/components/TechStack";
+import CredlyBadge from "@/components/CredlyBadge";
 
 export default function Home() {
   return (
@@ -90,6 +91,13 @@ export default function Home() {
             {"// Tech Stack"}
           </h2>
           <TechStack />
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-xl font-semibold mb-6 text-vscode-text font-mono">
+            {"// Certifications"}
+          </h2>
+          <CredlyBadge />
         </div>
       </div>
     </div>
